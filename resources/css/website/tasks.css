@@ -1,0 +1,1105 @@
+
+/* Task List */
+
+/* =====================================================
+   TASKFLOW - PRODUCTIVITY WORKSPACE
+===================================================== */
+
+.tf-workspace {
+    min-height: 80vh;
+    padding: 48px 0 76px;
+    color: #172033;
+    background:
+        radial-gradient(ellipse at 5% 0%, rgba(99, 102, 241, .07), transparent 32%),
+        #f6f8fc;
+}
+
+.tf-workspace-container {
+    max-width: 1180px;
+}
+
+.tf-workspace-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 30px;
+    animation: tfWorkspaceIn .5s ease both;
+}
+
+.tf-workspace-kicker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.tf-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 0 4px #d1fae5;
+}
+
+.tf-workspace-header h1 {
+    margin: 0;
+    font-size: clamp(30px, 4vw, 41px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.tf-workspace-header h1 span {
+    color: #4f46e5;
+}
+
+.tf-workspace-header p {
+    margin: 10px 0 0;
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.tf-workspace-add {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 45px;
+    padding: 0 19px;
+    border: 0;
+    border-radius: 12px;
+    color: #fff;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    box-shadow: 0 7px 18px rgba(79, 70, 229, .2);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.tf-workspace-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(79, 70, 229, .27);
+    color: #fff;
+}
+
+.tf-workspace-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 27px;
+}
+
+.tf-workspace-stat {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 22px;
+    border: 1px solid #e8edf5;
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, .025);
+    animation: tfWorkspaceIn .55s ease both;
+}
+
+.tf-workspace-stat:nth-child(2) { animation-delay: .08s; }
+.tf-workspace-stat:nth-child(3) { animation-delay: .16s; }
+
+.tf-workspace-stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tf-workspace-stat-icon {
+    display: grid;
+    place-items: center;
+    width: 39px;
+    height: 39px;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+.tf-stat-total .tf-workspace-stat-icon {
+    color: #4f46e5;
+    background: #eef2ff;
+}
+
+.tf-stat-progress .tf-workspace-stat-icon {
+    color: #d97706;
+    background: #fffbeb;
+}
+
+.tf-stat-complete .tf-workspace-stat-icon {
+    color: #059669;
+    background: #ecfdf5;
+}
+
+.tf-workspace-stat > strong {
+    display: block;
+    margin: 10px 0 4px;
+    font-size: 29px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.tf-workspace-stat-caption {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.tf-workspace-panel {
+    overflow: hidden;
+    border: 1px solid #e7ecf4;
+    border-radius: 19px;
+    background: #fff;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, .035);
+    animation: tfWorkspaceIn .55s .1s ease both;
+}
+
+.tf-workspace-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 25px 18px;
+}
+
+.tf-workspace-panel-header h2 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -.5px;
+}
+
+.tf-workspace-panel-header p {
+    margin: 6px 0 0;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.tf-workspace-count {
+    padding: 7px 11px;
+    border: 1px solid #e0e7ff;
+    border-radius: 9px;
+    color: #4f46e5;
+    background: #eef2ff;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.tf-workspace-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 25px 20px;
+}
+
+.tf-workspace-search {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    height: 43px;
+    padding: 0 13px;
+    border: 1px solid #e2e8f0;
+    border-radius: 11px;
+    color: #94a3b8;
+    background: #f8fafc;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.tf-workspace-search:focus-within {
+    border-color: #a5b4fc;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, .08);
+}
+
+.tf-workspace-search input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    color: #334155;
+    background: transparent;
+    font-size: 12px;
+}
+
+.tf-workspace-search input::placeholder {
+    color: #a0aec0;
+}
+
+.tf-workspace-search button {
+    border: 0;
+    color: #64748b;
+    background: transparent;
+}
+
+.tf-workspace-priority-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 43px;
+    padding: 0 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 11px;
+    color: #64748b;
+}
+
+.tf-workspace-priority-filter select {
+    max-width: 155px;
+    border: 0;
+    outline: 0;
+    color: #475569;
+    background: transparent;
+    font-size: 12px;
+}
+
+.tf-workspace-tabs {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 0 25px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.tf-workspace-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    padding: 14px 0;
+    border: 0;
+    color: #94a3b8;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: color .2s ease;
+}
+
+.tf-workspace-tab:hover,
+.tf-workspace-tab.active {
+    color: #4f46e5;
+}
+
+.tf-workspace-tab.active::after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 3px;
+    border-radius: 4px 4px 0 0;
+    background: #6366f1;
+    content: "";
+}
+
+.tf-tab-active-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #6366f1;
+}
+
+.tf-workspace-list-heading,
+.tf-workspace-task {
+    display: grid;
+    grid-template-columns: minmax(220px, 2.2fr) minmax(100px, .9fr) minmax(120px, 1fr) minmax(115px, 1fr) 68px;
+    align-items: center;
+    gap: 14px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.tf-workspace-list-heading {
+    min-height: 43px;
+    border-bottom: 1px solid #f0f3f8;
+    color: #94a3b8;
+    background: #fcfdff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .3px;
+}
+
+.tf-workspace-task {
+    min-height: 86px;
+    border-bottom: 1px solid #f0f3f8;
+    transition: background .2s ease;
+    animation: tfWorkspaceIn .4s ease both;
+    animation-delay: calc(var(--task-index, 0) * 35ms);
+}
+
+.tf-workspace-task:last-child {
+    border-bottom: 0;
+}
+
+.tf-workspace-task:hover {
+    background: #fafbff;
+}
+
+.tf-workspace-task-main {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 0;
+}
+
+.tf-task-marker {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.tf-task-marker.marker-progress {
+    border-color: #a5b4fc;
+    color: #4f46e5;
+    background: #eef2ff;
+}
+
+.tf-task-marker.marker-done {
+    border-color: #10b981;
+    color: #fff;
+    background: #10b981;
+}
+
+.tf-workspace-task-content {
+    min-width: 0;
+}
+
+.tf-workspace-task-content h3 {
+    margin: 0 0 5px;
+    overflow-wrap: anywhere;
+    color: #253047;
+    font-size: 12px;
+    font-weight: 750;
+    line-height: 1.5;
+}
+
+.tf-workspace-task-content p {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    color: #94a3b8;
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+.tf-workspace-task-done .tf-workspace-task-content h3 {
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.tf-workspace-priority {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+    padding: 6px 9px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 750;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.tf-workspace-priority > span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.tf-workspace-priority.priority-high {
+    color: #dc5050;
+    background: #fff1f1;
+}
+
+.tf-workspace-priority.priority-medium {
+    color: #c18418;
+    background: #fff8e7;
+}
+
+.tf-workspace-priority.priority-low {
+    color: #159b76;
+    background: #eafaf4;
+}
+
+.tf-workspace-task-date {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 10px;
+}
+
+.tf-workspace-overdue {
+    color: #dc2626;
+    font-weight: 800;
+}
+
+.tf-workspace-task-date small {
+    width: fit-content;
+    padding: 3px 5px;
+    border-radius: 5px;
+    color: #dc2626;
+    background: #fef2f2;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.tf-workspace-status {
+    width: fit-content;
+    padding: 6px 9px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 750;
+    white-space: nowrap;
+}
+
+.tf-workspace-status.status-pending,
+.tf-workspace-status-select.status-pending {
+    color: #b7791f;
+    background: #fffbeb;
+}
+
+.tf-workspace-status.status-in_progress,
+.tf-workspace-status-select.status-in_progress {
+    color: #4f46e5;
+    background: #eef2ff;
+}
+
+.tf-workspace-status.status-completed,
+.tf-workspace-status-select.status-completed {
+    color: #047857;
+    background: #ecfdf5;
+}
+
+.tf-workspace-status-select {
+    max-width: 115px;
+    padding: 7px 8px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    outline: 0;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tf-workspace-task-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.tf-workspace-task-actions button {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 8px;
+    color: #94a3b8;
+    background: transparent;
+    transition: all .2s ease;
+}
+
+.tf-workspace-task-actions button:hover:not(:disabled) {
+    color: #4f46e5;
+    background: #eef2ff;
+}
+
+.tf-workspace-task-actions button.tf-workspace-action-delete:hover:not(:disabled) {
+    color: #dc2626;
+    background: #fff1f1;
+}
+
+.tf-workspace-task-actions button:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.tf-workspace-mobile-label {
+    display: none;
+}
+
+.tf-workspace-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 230px;
+    gap: 14px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.tf-workspace-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 55px 20px 60px;
+    text-align: center;
+}
+
+.tf-workspace-empty-art {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 75px;
+    height: 75px;
+    margin-bottom: 20px;
+    border-radius: 23px;
+    color: #4f46e5;
+    background: #eef2ff;
+    font-size: 31px;
+}
+
+.tf-workspace-empty-art > span {
+    position: absolute;
+    top: -7px;
+    right: -8px;
+    display: grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    color: #d97706;
+    background: #fef3c7;
+    font-size: 12px;
+}
+
+.tf-workspace-empty h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.tf-workspace-empty p {
+    max-width: 410px;
+    margin: 0 0 21px;
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.tf-workspace-empty-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid #e0e7ff;
+    border-radius: 10px;
+    color: #4f46e5;
+    background: #eef2ff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tf-workspace-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 25px;
+    border-top: 1px solid #edf0f5;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.tf-workspace-pagination > div {
+    display: flex;
+    gap: 8px;
+}
+
+.tf-workspace-pagination button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 34px;
+    padding: 0 11px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    color: #475569;
+    background: #fff;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.tf-workspace-pagination button:hover:not(:disabled) {
+    border-color: #c7d2fe;
+    color: #4f46e5;
+    background: #eef2ff;
+}
+
+.tf-workspace-pagination button:disabled {
+    cursor: not-allowed;
+    opacity: .4;
+}
+
+/* Task modal */
+
+.tf-task-modal-backdrop {
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgba(15, 23, 42, .55);
+    backdrop-filter: blur(6px);
+    animation: tfWorkspaceBackdrop .2s ease both;
+}
+
+.tf-task-modal {
+    width: 100%;
+    max-width: 540px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    border-radius: 21px;
+    background: #fff;
+    box-shadow: 0 25px 80px rgba(15, 23, 42, .25);
+    animation: tfWorkspaceModal .25s ease both;
+}
+
+.tf-task-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 24px 25px 20px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.tf-task-modal-eyebrow {
+    color: #6366f1;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.tf-task-modal-header h2 {
+    margin: 8px 0 0;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -.6px;
+}
+
+.tf-task-modal-header p {
+    margin: 8px 0 0;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.tf-task-modal-close {
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    color: #64748b;
+    background: #fff;
+}
+
+.tf-task-modal-close:hover {
+    color: #dc2626;
+    background: #fff1f1;
+}
+
+.tf-task-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    padding: 24px 25px;
+}
+
+.tf-task-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.tf-task-form-group label {
+    color: #334155;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.tf-task-form-group label span {
+    color: #dc2626;
+}
+
+.tf-task-form-group input,
+.tf-task-form-group textarea,
+.tf-task-form-group select {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 12px;
+    border: 1px solid #dfe5ef;
+    border-radius: 10px;
+    outline: none;
+    color: #334155;
+    background: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.tf-task-form-group textarea {
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.tf-task-form-group input:focus,
+.tf-task-form-group textarea:focus,
+.tf-task-form-group select:focus {
+    border-color: #a5b4fc;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, .09);
+}
+
+.tf-task-form-error {
+    color: #dc2626;
+    font-size: 11px;
+}
+
+.tf-task-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.tf-task-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 17px 25px 23px;
+    border-top: 1px solid #edf0f5;
+    background: #fcfdff;
+}
+
+.tf-task-primary-button,
+.tf-task-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 41px;
+    padding: 0 15px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.tf-task-primary-button {
+    color: #fff;
+    background: #4f46e5;
+}
+
+.tf-task-primary-button:hover:not(:disabled) {
+    color: #fff;
+    background: #4338ca;
+}
+
+.tf-task-secondary-button {
+    border-color: #e2e8f0;
+    color: #475569;
+    background: #fff;
+}
+
+.tf-task-secondary-button:hover:not(:disabled) {
+    background: #f8fafc;
+}
+
+.tf-task-primary-button:disabled,
+.tf-task-secondary-button:disabled {
+    cursor: not-allowed;
+    opacity: .6;
+}
+
+@keyframes tfWorkspaceIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tfWorkspaceBackdrop {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes tfWorkspaceModal {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 991.98px) {
+    .tf-workspace-list-heading,
+    .tf-workspace-task {
+        grid-template-columns: minmax(180px, 2fr) minmax(90px, .9fr) minmax(100px, 1fr) minmax(100px, 1fr) 65px;
+        gap: 9px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .tf-workspace-panel-header,
+    .tf-workspace-toolbar {
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+
+    .tf-workspace-tabs {
+        gap: 20px;
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+
+    .tf-workspace-list-heading {
+        font-size: 9px;
+    }
+
+    .tf-workspace-task-content h3 {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .tf-workspace {
+        padding: 32px 0 50px;
+    }
+
+    .tf-workspace-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .tf-workspace-header h1 {
+        font-size: 31px;
+    }
+
+    .tf-workspace-stats {
+        gap: 10px;
+    }
+
+    .tf-workspace-stat {
+        padding: 13px;
+    }
+
+    .tf-workspace-stat-top {
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        gap: 8px;
+        font-size: 10px;
+    }
+
+    .tf-workspace-stat-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+
+    .tf-workspace-stat > strong {
+        font-size: 24px;
+    }
+
+    .tf-workspace-stat-caption {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .tf-workspace-panel-header {
+        padding: 20px 16px 16px;
+    }
+
+    .tf-workspace-panel-header h2 {
+        font-size: 17px;
+    }
+
+    .tf-workspace-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 0 16px 16px;
+    }
+
+    .tf-workspace-priority-filter select {
+        flex: 1;
+        max-width: none;
+    }
+
+    .tf-workspace-tabs {
+        gap: 20px;
+        padding: 0 16px;
+    }
+
+    .tf-workspace-list-heading {
+        display: none;
+    }
+
+    .tf-workspace-task {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 14px 10px;
+        padding: 17px 16px;
+    }
+
+    .tf-workspace-task-main {
+        grid-column: 1 / -1;
+    }
+
+    .tf-workspace-task-priority {
+        display: none;
+    }
+
+    .tf-workspace-mobile-label {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+        color: #94a3b8;
+        font-size: 10px;
+    }
+
+    .tf-workspace-task-date {
+        align-self: center;
+        justify-content: flex-end;
+    }
+
+    .tf-workspace-task-status {
+        justify-self: start;
+    }
+
+    .tf-workspace-task-actions {
+        grid-column: 2;
+        grid-row: 3;
+        align-self: center;
+    }
+
+    .tf-workspace-task-status-select {
+        max-width: 120px;
+    }
+
+    .tf-workspace-pagination {
+        padding: 15px 16px;
+    }
+}
+
+@media (max-width: 420px) {
+    .tf-workspace-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .tf-workspace-stat {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 4px 12px;
+    }
+
+    .tf-workspace-stat-top {
+        grid-column: 1;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .tf-workspace-stat > strong {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .tf-workspace-stat-caption {
+        grid-column: 1;
+    }
+
+    .tf-workspace-pagination {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tf-task-modal-backdrop {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .tf-task-modal {
+        max-height: 92vh;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .tf-task-modal-header,
+    .tf-task-modal-body {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .tf-task-modal-footer {
+        padding: 15px 18px 22px;
+    }
+
+    .tf-task-form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tf-workspace *,
+    .tf-workspace *::before,
+    .tf-workspace *::after,
+    .tf-task-modal,
+    .tf-task-modal-backdrop {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* DAHBOARD USER */
+.tf-dashboard-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}

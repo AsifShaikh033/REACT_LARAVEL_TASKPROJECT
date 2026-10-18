@@ -1,176 +1,342 @@
+
 import { Link } from 'react-router-dom';
 
 function Home() {
+    const features = [
+        {
+            icon: 'bi-list-check',
+            title: 'Smart Task Management',
+            description:
+                'Create tasks, organize your workflow, and keep every important detail in one place.',
+            color: 'blue',
+            number: '01',
+        },
+        {
+            icon: 'bi-calendar2-check',
+            title: 'Plan Your Day',
+            description:
+                'Stay focused on deadlines and upcoming work with a clearer daily plan.',
+            color: 'purple',
+            number: '02',
+        },
+        {
+            icon: 'bi-graph-up-arrow',
+            title: 'Track Your Progress',
+            description:
+                'Understand what is completed, what is in progress, and what needs attention.',
+            color: 'green',
+            number: '03',
+        },
+    ];
+
     return (
-        <>
-            <section className="py-5">
-                <div className="container py-lg-5">
+        <main className="tf-home">
+            {/* Hero */}
+            <section className="tf-home-hero">
+                <div className="tf-home-orb tf-home-orb-one" />
+                <div className="tf-home-orb tf-home-orb-two" />
+
+                <div className="container tf-home-hero-container">
                     <div className="row align-items-center g-5">
-                        <div className="col-lg-7">
-                            <span className="badge rounded-pill bg-primary-subtle text-primary mb-3 px-3 py-2">
-                                <i className="bi bi-stars me-2"></i>
-                                Simple task management
-                            </span>
+                        <div className="col-lg-6">
+                            <div className="tf-home-copy">
+                                <div className="tf-home-eyebrow">
+                                    <span className="tf-home-eyebrow-icon">
+                                        <i className="bi bi-stars" />
+                                    </span>
+                                    A smarter way to work
+                                    <span className="tf-home-eyebrow-dot" />
+                                </div>
 
-                            <h1 className="display-4 fw-bold mb-4">
-                                Manage your tasks.
-                                <span className="text-primary">
-                                    {' '}Achieve more.
-                                </span>
-                            </h1>
+                                <h1 className="tf-home-title">
+                                    Turn your
+                                    <span className="tf-home-title-gradient">
+                                        plans into
+                                    </span>
+                                    <span className="tf-home-title-last">
+                                        progress.
+                                    </span>
+                                </h1>
 
-                            <p className="fs-5 text-secondary mb-4">
-                                Plan your work, organize your priorities,
-                                and keep track of your progress with TaskFlow.
-                            </p>
+                                <p className="tf-home-description">
+                                    Bring your tasks, priorities, and daily plans
+                                    together in one beautiful workspace.
+                                    Less confusion, more focus, and a better
+                                    way to get things done.
+                                </p>
 
-                            <div className="d-flex flex-wrap gap-3">
-                                <Link
-                                    to="/register"
-                                    className="btn btn-primary btn-lg"
-                                >
-                                    Get Started
-                                    <i className="bi bi-arrow-right ms-2"></i>
-                                </Link>
+                                <div className="tf-home-actions">
+                                    <Link
+                                        to="/register"
+                                        className="tf-home-primary-btn"
+                                    >
+                                        Get Started Free
+                                        <i className="bi bi-arrow-up-right" />
+                                    </Link>
 
-                                <Link
-                                    to="/login"
-                                    className="btn btn-outline-primary btn-lg"
-                                >
-                                    Sign In
-                                </Link>
+                                    <Link
+                                        to="/login"
+                                        className="tf-home-secondary-btn"
+                                    >
+                                        <i className="bi bi-play-circle" />
+                                        Sign In
+                                    </Link>
+                                </div>
+
+                                <div className="tf-home-trust">
+                                    <div className="tf-home-trust-icon">
+                                        <i className="bi bi-check2-circle" />
+                                    </div>
+
+                                    <p>
+                                        <strong>One workspace.</strong>
+                                        <span> A clearer way to manage your day.</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-5">
-                            <div className="tf-card p-4 p-md-5">
-                                <div className="d-flex align-items-center justify-content-between mb-4">
-                                    <h5 className="fw-bold mb-0">
-                                        My Tasks
-                                    </h5>
+                        {/* Animated dashboard preview */}
+                        <div className="col-lg-6">
+                            <div className="tf-home-visual">
+                                <div className="tf-home-visual-glow" />
+                                <div className="tf-home-visual-grid" />
 
-                                    <i className="bi bi-three-dots fs-4 text-muted"></i>
-                                </div>
-
-                                <div className="d-flex align-items-center gap-3 p-3 bg-light rounded mb-3">
-                                    <i className="bi bi-check-circle-fill text-success fs-4"></i>
-
-                                    <div className="flex-grow-1">
-                                        <div className="fw-semibold">
-                                            Create project plan
-                                        </div>
-                                        <small className="text-muted">
-                                            Planning
-                                        </small>
-                                    </div>
-
-                                    <span className="tf-badge tf-badge-success">
-                                        Done
+                                <div className="tf-home-floating tf-home-floating-top">
+                                    <span className="tf-home-floating-icon tf-home-floating-icon-green">
+                                        <i className="bi bi-check2-all" />
+                                    </span>
+                                    <span>
+                                        <strong>Stay on track</strong>
+                                        <small>One task at a time</small>
                                     </span>
                                 </div>
 
-                                <div className="d-flex align-items-center gap-3 p-3 bg-light rounded mb-3">
-                                    <i className="bi bi-circle text-primary fs-4"></i>
-
-                                    <div className="flex-grow-1">
-                                        <div className="fw-semibold">
-                                            Review project tasks
+                                <div className="tf-home-dashboard">
+                                    <div className="tf-home-dashboard-top">
+                                        <div className="tf-home-dashboard-brand">
+                                            <span className="tf-home-mini-logo">
+                                                <i className="bi bi-check-lg" />
+                                            </span>
+                                            <span>My Workspace</span>
                                         </div>
-                                        <small className="text-muted">
-                                            Development
-                                        </small>
+
+                                        <button
+                                            type="button"
+                                            className="tf-home-more"
+                                            aria-label="Dashboard preview options"
+                                            title="Dashboard preview"
+                                        >
+                                            <i className="bi bi-three-dots" />
+                                        </button>
                                     </div>
 
-                                    <span className="tf-badge tf-badge-primary">
-                                        Active
+                                    <div className="tf-home-dashboard-heading">
+                                        <div>
+                                            <span className="tf-home-dashboard-caption">
+                                                YOUR OVERVIEW
+                                            </span>
+                                            <h3>Today's focus</h3>
+                                        </div>
+
+                                        <span className="tf-home-date">
+                                            <i className="bi bi-calendar3 me-1" />
+                                            Daily plan
+                                        </span>
+                                    </div>
+
+                                    <div className="tf-home-stats">
+                                        <div className="tf-home-stat">
+                                            <span className="tf-home-stat-icon tf-home-stat-blue">
+                                                <i className="bi bi-list-task" />
+                                            </span>
+                                            <span className="tf-home-stat-label">
+                                                Total tasks
+                                            </span>
+                                            <strong>12</strong>
+                                            <small>Sample data</small>
+                                        </div>
+
+                                        <div className="tf-home-stat">
+                                            <span className="tf-home-stat-icon tf-home-stat-green">
+                                                <i className="bi bi-check2-circle" />
+                                            </span>
+                                            <span className="tf-home-stat-label">
+                                                Completed
+                                            </span>
+                                            <strong>8</strong>
+                                            <small>Sample data</small>
+                                        </div>
+                                    </div>
+
+                                    <div className="tf-home-task-heading">
+                                        <strong>Task overview</strong>
+                                        <span>Preview</span>
+                                    </div>
+
+                                    <div className="tf-home-preview-task">
+                                        <span className="tf-home-preview-check tf-home-preview-done">
+                                            <i className="bi bi-check-lg" />
+                                        </span>
+                                        <span className="tf-home-preview-task-text">
+                                            <strong>Plan the week</strong>
+                                            <small>Planning</small>
+                                        </span>
+                                        <span className="tf-home-status tf-home-status-done">
+                                            Done
+                                        </span>
+                                    </div>
+
+                                    <div className="tf-home-preview-task">
+                                        <span className="tf-home-preview-check tf-home-preview-active">
+                                            <i className="bi bi-arrow-repeat" />
+                                        </span>
+                                        <span className="tf-home-preview-task-text">
+                                            <strong>Work on project</strong>
+                                            <small>Development</small>
+                                        </span>
+                                        <span className="tf-home-status tf-home-status-active">
+                                            Active
+                                        </span>
+                                    </div>
+
+                                    <div className="tf-home-preview-task">
+                                        <span className="tf-home-preview-check tf-home-preview-pending">
+                                            <i className="bi bi-circle" />
+                                        </span>
+                                        <span className="tf-home-preview-task-text">
+                                            <strong>Review progress</strong>
+                                            <small>Review</small>
+                                        </span>
+                                        <span className="tf-home-status tf-home-status-pending">
+                                            Next
+                                        </span>
+                                    </div>
+
+                                    <div className="tf-home-dashboard-bottom">
+                                        <i className="bi bi-info-circle" />
+                                        Illustrative preview — not live account data
+                                    </div>
+                                </div>
+
+                                <div className="tf-home-floating tf-home-floating-bottom">
+                                    <span className="tf-home-progress-ring">
+                                        <i className="bi bi-lightning-charge-fill" />
+                                    </span>
+                                    <span>
+                                        <strong>Keep moving forward</strong>
+                                        <small>Progress starts with a plan</small>
                                     </span>
                                 </div>
 
-                                <div className="d-flex align-items-center gap-3 p-3 bg-light rounded">
-                                    <i className="bi bi-circle text-muted fs-4"></i>
-
-                                    <div className="flex-grow-1">
-                                        <div className="fw-semibold">
-                                            Prepare weekly report
-                                        </div>
-                                        <small className="text-muted">
-                                            Reporting
-                                        </small>
-                                    </div>
-
-                                    <span className="tf-badge tf-badge-warning">
-                                        Pending
-                                    </span>
-                                </div>
-
-                                <p className="text-muted small mt-4 mb-0">
-                                    Preview only — these are sample tasks.
-                                </p>
+                                <span className="tf-home-deco tf-home-deco-one" />
+                                <span className="tf-home-deco tf-home-deco-two" />
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <a href="#features" className="tf-home-scroll">
+                    <span>Discover TaskFlow</span>
+                    <i className="bi bi-arrow-down" />
+                </a>
             </section>
 
-            <section id="features" className="py-5 bg-white">
-                <div className="container py-4">
-                    <div className="text-center mb-5">
-                        <h2 className="fw-bold">Everything in one place</h2>
+            {/* Feature introduction */}
+            <section id="features" className="tf-home-features">
+                <div className="container">
+                    <div className="tf-home-section-heading">
+                        <span className="tf-home-section-eyebrow">
+                            <i className="bi bi-grid me-2" />
+                            BUILT FOR YOUR EVERYDAY
+                        </span>
 
-                        <p className="text-muted">
-                            Keep your daily work organized and easy to manage.
+                        <h2>
+                            Everything you need.
+                            <span> Nothing to distract you.</span>
+                        </h2>
+
+                        <p>
+                            Simple tools to help you organize work,
+                            prioritize what matters, and move forward.
                         </p>
                     </div>
 
                     <div className="row g-4">
-                        <div className="col-md-4">
-                            <div className="tf-card p-4 h-100">
-                                <i className="bi bi-list-check fs-2 text-primary"></i>
+                        {features.map((feature) => (
+                            <div className="col-md-6 col-lg-4" key={feature.number}>
+                                <article className="tf-home-feature-card">
+                                    <div className="tf-home-feature-top">
+                                        <span
+                                            className={`tf-home-feature-icon tf-home-feature-${feature.color}`}
+                                        >
+                                            <i className={`bi ${feature.icon}`} />
+                                        </span>
 
-                                <h5 className="fw-bold mt-3">
-                                    Task Management
-                                </h5>
+                                        <span className="tf-home-feature-number">
+                                            {feature.number}
+                                        </span>
+                                    </div>
 
-                                <p className="text-muted mb-0">
-                                    Create tasks, set priorities, and track
-                                    your progress in one place.
-                                </p>
+                                    <h3>{feature.title}</h3>
+                                    <p>{feature.description}</p>
+
+                                    <div className="tf-home-feature-line">
+                                        <span />
+                                    </div>
+                                </article>
                             </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Call to action */}
+            <section className="tf-home-cta-section">
+                <div className="container">
+                    <div className="tf-home-cta">
+                        <div className="tf-home-cta-orb" />
+
+                        <div className="tf-home-cta-content">
+                            <span className="tf-home-cta-eyebrow">
+                                <i className="bi bi-stars me-2" />
+                                YOUR NEXT CHAPTER STARTS HERE
+                            </span>
+
+                            <h2>
+                                Ready to make your
+                                <span> day count?</span>
+                            </h2>
+
+                            <p>
+                                Start organizing your work with TaskFlow
+                                and take the next step toward your goals.
+                            </p>
+
+                            <Link
+                                to="/register"
+                                className="tf-home-cta-button"
+                            >
+                                Create Your Account
+                                <i className="bi bi-arrow-right" />
+                            </Link>
                         </div>
 
-                        <div className="col-md-4">
-                            <div className="tf-card p-4 h-100">
-                                <i className="bi bi-calendar-check fs-2 text-primary"></i>
-
-                                <h5 className="fw-bold mt-3">
-                                    Stay Organized
-                                </h5>
-
-                                <p className="text-muted mb-0">
-                                    Keep due dates and upcoming work
-                                    visible so important tasks stay on track.
-                                </p>
+                        <div className="tf-home-cta-decoration" aria-hidden="true">
+                            <div className="tf-home-cta-check">
+                                <i className="bi bi-check-lg" />
                             </div>
-                        </div>
-
-                        <div className="col-md-4">
-                            <div className="tf-card p-4 h-100">
-                                <i className="bi bi-graph-up-arrow fs-2 text-primary"></i>
-
-                                <h5 className="fw-bold mt-3">
-                                    Track Progress
-                                </h5>
-
-                                <p className="text-muted mb-0">
-                                    Get a clearer view of completed,
-                                    pending, and in-progress work.
-                                </p>
-                            </div>
+                            <span className="tf-home-cta-spark tf-home-cta-spark-one">
+                                ✦
+                            </span>
+                            <span className="tf-home-cta-spark tf-home-cta-spark-two">
+                                ✧
+                            </span>
                         </div>
                     </div>
                 </div>
             </section>
-        </>
+        </main>
     );
 }
 
